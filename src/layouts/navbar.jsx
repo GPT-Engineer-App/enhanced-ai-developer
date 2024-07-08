@@ -15,8 +15,8 @@ import { navItems } from "../App";
 
 const Layout = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col">
-      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
+    <div className="flex min-h-screen w-full flex-col transparent-matt-black">
+      <header className="sticky top-0 flex h-16 items-center gap-4 border-b border-gray-700 bg-transparent px-4 md:px-6 justify-between">
         <DesktopNav />
         <MobileNav />
         <UserMenu />
@@ -53,7 +53,7 @@ const MobileNav = () => (
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
     </SheetTrigger>
-    <SheetContent side="left">
+    <SheetContent side="left" className="transparent-matt-black-light">
       <nav className="grid gap-6 text-lg font-medium">
         <NavItem
           to="/"
@@ -80,7 +80,7 @@ const UserMenu = () => (
         <span className="sr-only">Toggle user menu</span>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
+    <DropdownMenuContent align="end" className="transparent-matt-black-light">
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuItem>Settings</DropdownMenuItem>
@@ -98,8 +98,8 @@ const NavItem = ({ to, children, className }) => (
       cn(
         "transition-colors",
         isActive
-          ? "text-foreground"
-          : "text-muted-foreground hover:text-foreground",
+          ? "text-primary"
+          : "text-muted-foreground hover:text-primary",
         className,
       )
     }

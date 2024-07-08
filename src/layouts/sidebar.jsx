@@ -15,10 +15,10 @@ import { navItems } from "../App";
 
 const Layout = () => {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] transparent-matt-black">
       <Sidebar />
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b border-gray-700 bg-transparent px-4 lg:h-[60px] lg:px-6">
           <MobileSidebar />
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
           <UserDropdown />
@@ -32,9 +32,9 @@ const Layout = () => {
 };
 
 const Sidebar = () => (
-  <div className="hidden border-r bg-muted/40 md:block">
+  <div className="hidden border-r border-gray-700 bg-transparent md:block">
     <div className="flex h-full max-h-screen flex-col gap-2">
-      <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
+      <div className="flex h-14 items-center border-b border-gray-700 px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold">
           <Package2 className="h-6 w-6" />
           <span>Acme Inc</span>
@@ -62,7 +62,7 @@ const MobileSidebar = () => (
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
     </SheetTrigger>
-    <SheetContent side="left" className="flex flex-col">
+    <SheetContent side="left" className="transparent-matt-black-light flex flex-col">
       <nav className="grid gap-2 text-lg font-medium">
         <NavLink
           to="/"
@@ -89,7 +89,7 @@ const UserDropdown = () => (
         <span className="sr-only">Toggle user menu</span>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
+    <DropdownMenuContent align="end" className="transparent-matt-black-light">
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuItem>Settings</DropdownMenuItem>
